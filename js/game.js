@@ -54,5 +54,7 @@ answerButton.addEventListener("click", function() {
 
 function DisplayCurrentQuestion()
 {
-  // TODO: Implement this function
+  questionDiv.innerHTML = "<p>"+ questions[currentQuestionIndex].question + "</p>";
+  questionDiv.innerHTML += "<input type='radio' name='answer' value='True' /> True";
+  questionDiv.innerHTML += "<input type='radio' name='answer' value='False' /> False";
 }
