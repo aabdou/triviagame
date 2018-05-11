@@ -1,0 +1,27 @@
+.game {
+  width: 40vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: 5px solid mistyrose;
+  padding: 1rem;
+}
+
+#question {
+  width: 30vw;
+  height: 40vh;
+}
+
+.result {
+  width: calc(10vw - 5px - 1.5rem);
+  border: 5px solid olivedrab;
+  padding: 0.5rem;
+}
+
+.controls {
+  width: 40vw;
+}
+
+#answerButton {
+  display: none;
+}
