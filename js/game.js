@@ -40,6 +40,32 @@ playButton.addEventListener("click", function() {
 
 answerButton.addEventListener("click", function() {
 
+  var answer = document.querySelector("input[name='answer']:checked").value;
+  let questionObj = questions[currentQuestionIndex];
+
+  if (questionObj.correct_answer == answer)
+  {
+    correctAnswers++;
+    correctDiv.innerText = "Correct: " + correctAnswers;
+  }
+
+  // b. Move to the next question => Increment the cureent question index
+  currentQuestionIndex += 1;
+
+  remainingDiv.innerText = "Remaining: " + (NumOfQuestions - currentQuestionIndex);
+
+    // c. Test if we finished all the question
+  //    c.1 Hide the answer button and show the play button
+  if (currentQuestionIndex == NumOfQuestions)
+  {
+    playButton.style.display = "block";
+    answerButton.style.display = "none";
+    questionDiv.innerHTML = "Play again!";
+  }
+  else
+  {
+    DisplayCurrentQuestion();
+  }
 });
 
 function DisplayCurrentQuestion()
