@@ -47,10 +47,29 @@ playButton.addEventListener("click", function() {
 });
 
 answerButton.addEventListener("click", function() {
-  // TODO: Replace with the actual functionality
-  console.log("Answer button");
+  // 1. Get the answer from the user
+  let answer = document.querySelector("input[name='answer']:checked").value;
+  let question = questions[currentQuestionIndex];
+  if (question.correct_answer == answer)
+  {
+    correctAnswers += 1;
+    correctDiv.innerText = "Correct: " + correctAnswers;
+  }
+
+  currentQuestionIndex += 1;
+  remainingDiv.innerText = "Remaining: " + (NumOfQuestions - currentQuestionIndex);
+
+  if (currentQuestionIndex == NumOfQuestions)
+  {
+    playButton.style.display = "block";
+    answerButton.style.display = "none";
+    questionDiv.innerText = "You finished your game. Click Play to play again!";
+  }
+  else
+  {
+    DisplayCurrentQuestion();
+  }
 });
-// Button event handlers
 
 function DisplayCurrentQuestion()
 {
